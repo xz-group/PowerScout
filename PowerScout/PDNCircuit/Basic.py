@@ -4,15 +4,10 @@ import time
 from PySpice1v5.Spice.Netlist import SubCircuit, Circuit
 from PySpice1v5.Unit import *
 import PySpice1v5.Logging.Logging as Logging
-from sys import exit
-import numpy as np
-from math import log
 
 logger = Logging.setup_logging(logging_level='CRITICAL')
 
-###############################################################################
-# This class defines the global variables and functions
-###############################################################################
+
 class Global:
     GLOBAL_VDD = 'VDD'
     GLOBAL_VSS = 'VSS'
@@ -48,7 +43,15 @@ class PowerDeliveryNetwork(Global):
         self.nodes_pool = []
         self.freq = []
 
+        self._parameters()
+        self._components()
         self._structure()
+
+    def _components(self):
+        pass
+
+    def _parameters(self):
+        pass
 
     def _structure(self):
         pass
@@ -100,7 +103,6 @@ class Block2Ports(Global):
 class BasicCircuitRLC(SubCircuit, Block4Ports):
     DEFAULT_NAME = 'RLC_Circuit'
 
-    # todo: 增加可以通过kwargs设置多个decouple电容
     def __init__(self, pdn, name=None, is_zero_ground=True, *, res_s, ind_s, cap_p, res_p, ind_p):
         if name is not None:
             self.sub_name = name
