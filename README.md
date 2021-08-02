@@ -41,14 +41,26 @@ quantitatively evaluate the severity of side-channel vulnerabilities.
 ## Getting Started
 
 ### Prerequisites
-
++ PowerScout is based on **Ngspice** circuit simulator. To install:
+   + For Windows: 
+   Unzip `ngspice-34_dll_64.zip` to `C:\Program Files`. Make sure the path of `ngspice.dll` file is:
+   
+   ```shell
+   C:\Program Files\Spice64_dll\dll-vs\ngspice.dll
+   ```
+   + For Linux: please refer [Ngspice manual](http://ngspice.sourceforge.net/docs/ngspice-manual.pdf) for the detailed instructions.
 
 ### Installation
-
-
++ Clone the repo
+```bash
+git clone https://github.com/xz-group/PowerScout.git
+```
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Get Started
+
+
+## Advanced Usage
 
 
 <!-- ROADMAP -->
